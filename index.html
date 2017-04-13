@@ -70,11 +70,11 @@
     }
 
     /*document.querySelector('#show').addEventListener('click', () => {
-      const iconUrl = document.querySelector('select').selectedOptions[0].value;
-      let imgElement = document.createElement('img');
-      imgElement.src = iconUrl;
-      document.querySelector('#container').appendChild(imgElement);
-    });*/
+     const iconUrl = document.querySelector('select').selectedOptions[0].value;
+     let imgElement = document.createElement('img');
+     imgElement.src = iconUrl;
+     document.querySelector('#container').appendChild(imgElement);
+     });*/
 </script>
 
 <script>
@@ -137,14 +137,16 @@
                     // Get window.URL object
                     var URL = window.URL || window.webkitURL;
 
-                    var blob = new Blob([imgFile]);
-                    // Create and revoke ObjectURL
-                    var imgURL = URL.createObjectURL(blob);
-
-
                     if(type == "doc"){
-                        window.open(imgURL,'_blank');
+                        var blob = new Blob([imgFile], {type : 'application/pdf'});
+
+                        var pdfUrl = URL.createObjectURL(blob);
+                        window.open(pdfUrl,'_blank');
                     } else {
+
+                        var blob = new Blob([imgFile]);
+                        // Create and revoke ObjectURL
+                        var imgURL = URL.createObjectURL(blob);
 
                         // Set img src to ObjectURL
                         var imgElephant = document.getElementById(target);
