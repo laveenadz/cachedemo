@@ -7,14 +7,16 @@
     <title>Keynectup</title>
 </head>
 <body>
-<button onclick="viewImage('1'); return false;">View Sample Image 1</button>
-<button onclick="viewImage('2'); return false;">View Sample Image 2</button>
+<button onclick="viewSample(); return false;">View Sample</button>
+<!--<button onclick="viewImage('2'); return false;">View Sample Image 2</button>
 <button onclick="viewImage('3'); return false;">View Sample Image 3</button>
 <button onclick="viewDocument('1'); return false;">Download Doc 1</button>
-<button onclick="viewDocument('2'); return false;">Download Doc 2</button>
+<button onclick="viewDocument('2'); return false;">Download Doc 2</button>-->
 
 <figure id="image-container" style="display: none;">
-    <img id="elephant" src="" alt="Sample Image" width="50%">
+    <img id="image-1" src="" alt="Sample Image" width="33.33%">
+    <img id="image-2" src="" alt="Sample Image" width="33.33%">
+    <img id="image-3" src="" alt="Sample Image" width="33.33%">
 </figure>
 
 <script type="text/javascript">
@@ -74,7 +76,7 @@
 
 <script>
 
-    function processRequest(link, type) {
+    function processRequest(link, type, target) {
         // IndexedDB
         var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB,
             IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.OIDBTransaction || window.msIDBTransaction,
@@ -142,7 +144,7 @@
                     } else {
 
                         // Set img src to ObjectURL
-                        var imgElephant = document.getElementById("elephant");
+                        var imgElephant = document.getElementById(target);
                         imgElephant.setAttribute("src", imgURL);
 
                         // Revoking ObjectURL
@@ -191,23 +193,30 @@
 
     function viewDocument(key){
         if(key == "1"){
-            processRequest("Test_document_PDF.pdf", "doc");    
+            processRequest("Test_document_PDF.pdf", "doc");
         } else if(key == "2"){
-            processRequest("pdf-sample.pdf", "doc");    
+            processRequest("pdf-sample.pdf", "doc");
         }
-        
     }
 
-    function viewImage(key){
+    function viewImage(key, target){
         document.getElementById("image-container").style.display = 'block';
         if(key == 1){
-            processRequest("image.jpg", "image");
+            processRequest("image.jpg", "image", target);
         } else if(key == 2){
-            processRequest("sample-1.jpg", "image");
+            processRequest("sample-1.jpg", "image", target);
         } else if(key == 3){
-            processRequest("sample-2.jpg", "image");
+            processRequest("sample-2.jpg", "image", target);
         }
 
+    }
+    function viewSample() {
+        viewImage("1", "image-1");
+        viewImage("2", "image-2");
+        viewImage("3", "image-3");
+
+        viewDocument("1");
+        viewDocument("2");
     }
 
 </script>
