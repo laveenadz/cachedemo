@@ -1,0 +1,16 @@
+CACHE MANIFEST
+
+CACHE:
+
+/index.html
+/image.jpg
+/sample-1.jpg
+/sample-2.jpg
+/pdf-sample.pdf
+/Test_document_PDF.pdf
+
+NETWORK:
+*
+
+FALLBACK:
+/ /index.html
