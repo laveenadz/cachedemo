@@ -140,8 +140,15 @@
                     if(type == "doc"){
                         var blob = new Blob([imgFile], {type : 'application/pdf'});
 
-                        var pdfUrl = URL.createObjectURL(blob);
-                        window.open(pdfUrl,'_blank');
+                        /*var pdfUrl = URL.createObjectURL(blob);
+                        window.open(pdfUrl,'_blank');*/
+
+
+                        var reader = new FileReader();
+                        reader.onload = function(e){
+                            window.open(reader.result, '_blank');
+                        }
+                        reader.readAsDataURL(blob);
                     } else {
 
                         var blob = new Blob([imgFile]);
