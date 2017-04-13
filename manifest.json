@@ -1,0 +1,16 @@
+{
+	"name" : "App BabsonChile trip",
+	"short_name": "BabsonChile",
+	"start_url": "/keynectup/",
+	"scope": "/keynectup/",
+	"display": "standalone",
+	"theme_color": "#9C2780",
+	"background_color": "#EEE",
+	"icons": [
+		{
+			"src": "/keynectup/icon.png",
+			"sizes": "54x53",
+			"type": "image/png"
+		}
+	]
+}
