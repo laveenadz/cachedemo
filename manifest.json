@@ -6,10 +6,10 @@
 	"display": "standalone",
 	"theme_color": "#9C2780",
 	"background_color": "#EEE",
-	"icon": [
+	"icons": [
 		{
 			"src": "/keynectup/icon.png",
-			"size": "512x512",
+			"sizes": "54x53",
 			"type": "image/png"
 		}
 	]
