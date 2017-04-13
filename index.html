@@ -88,8 +88,11 @@
                     // Get window.URL object
                     var URL = window.URL || window.webkitURL;
 
+
+
+                    var blob = new Blob([imgFile]);
                     // Create and revoke ObjectURL
-                    var imgURL = URL.createObjectURL(imgFile);
+                    var imgURL = URL.createObjectURL(blob);
 
 
                     if(type == "doc"){
