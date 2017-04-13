@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" manifest="/auto.appcache">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Demo</title>
@@ -16,8 +16,50 @@
 </figure>
 
 <script type="text/javascript">
-    if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('service-worker.js', { insecure: true });
+    function showMsg(msg){
+        alert(msg);
+    }
+
+    if ( 'serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/keynectup/service-worker.js').then(function(registration) {
+// Registration was successful
+            showMsg('ServiceWorker registration successful with scope: ', registration.scope);
+            if ( registration.installing ) {
+                showMsg( 'Service worker installing' );
+            } else if ( registration.waiting ) {
+                showMsg( 'Service worker installed' );
+            } else if ( registration.active ) {
+                showMsg( 'Service worker active' );
+            }
+        }).catch(function(err) {
+            // registration failed :(
+            showMsg('ServiceWorker registration failed: ', err);
+        });
+
+// Listen for claiming our ServiceWorker
+        navigator.serviceWorker.addEventListener('controllerchange',
+            function(event) {
+                // Listen for changes in the state of our ServiceWorker
+                navigator.serviceWorker.controller.addEventListener('statechange', function() {
+                    // If the ServiceWorker becomes "activated", let the user know they can go offline!
+                    if (this.state === 'activated') {
+                        // This example is refreshing the app directly, but you can inform the user with a fancy modal window or similar
+                        window.location.reload( true );
+                    }
+                });
+            });
+
+// Browsers not using Service Workers
+    } else  if ('applicationCache' in window) {
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = 'load-appcache.html'
+        document.body.appendChild(iframe);
+        showMsg("Iframe loaded for AppCache management");
+
+    } else {
+        showMsg("no service worker - no appCache");
+
     }
 
     /*document.querySelector('#show').addEventListener('click', () => {
