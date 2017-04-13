@@ -1,14 +1,14 @@
 CACHE MANIFEST
 
-/keynectup/index.html
-/keynectup/image.jpg
-/keynectup/sample-1.jpg
-/keynectup/sample-2.jpg
-/keynectup/pdf-sample.pdf
-/keynectup/Test_document_PDF.pdf
+/index.html
+/image.jpg
+/sample-1.jpg
+/sample-2.jpg
+/pdf-sample.pdf
+/Test_document_PDF.pdf
 
 NETWORK:
 *
 
 FALLBACK:
-/keynectup /keynectup/index.html
+ /index.html

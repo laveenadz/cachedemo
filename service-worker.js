@@ -3,13 +3,13 @@ const RUNTIME = 'runtime';
 
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
-  '/keynectup/index.html',
-  '/keynectup/', // Alias for index.html
-  '/keynectup/image.jpg',
-  '/keynectup/sample-1.jpg',
-  '/keynectup/sample-2.jpg',
-  '/keynectup/pdf-sample.pdf',
-  '/keynectup/Test_document_PDF.pdf'
+  '/index.html',
+  '/', // Alias for index.html
+  '/image.jpg',
+  '/sample-1.jpg',
+  '/sample-2.jpg',
+  '/pdf-sample.pdf',
+  '/Test_document_PDF.pdf'
 ];
 
 // The install handler takes care of precaching the resources we always need.
