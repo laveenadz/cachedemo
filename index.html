@@ -146,7 +146,7 @@
 
                         var reader = new FileReader();
                         reader.onload = function(e){
-                            window.open(reader.result, '_blank');
+                            window.open(reader.result);
                         }
                         reader.readAsDataURL(blob);
                     } else {
