@@ -43,7 +43,7 @@
             showMsg('ServiceWorker registration failed: ', err);
         });
 
-// Listen for claiming our ServiceWorker
+        // Listen for claiming our ServiceWorker
         navigator.serviceWorker.addEventListener('controllerchange',
             function(event) {
                 // Listen for changes in the state of our ServiceWorker
