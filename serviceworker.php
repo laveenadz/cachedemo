@@ -1,4 +1,6 @@
 <?php
+header('Content-type: text/javascript');
+
 $list = array(
     '/keynectup/index.html',
       '/keynectup/', // Alias for index.html
