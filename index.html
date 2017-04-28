@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="shortcut icon" type="image/png" href="/keynectup/favicon.ico"/>
     <link rel="manifest" href="manifest.json">
     <title>Keynectup</title>
 </head>
@@ -28,7 +28,7 @@
     }
 
     if ( 'serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+        navigator.serviceWorker.register('/keynectup/service-worker.js').then(function(registration) {
 // Registration was successful
             showMsg('ServiceWorker registration successful with scope: ', registration.scope);
             if ( registration.installing ) {
@@ -60,7 +60,7 @@
     } else  if ('applicationCache' in window) {
         var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
-        iframe.src = 'load-appcache.html'
+        iframe.src = '/keynectup/load-appcache.html'
         document.body.appendChild(iframe);
         showMsg("Iframe loaded for AppCache management");
 
