@@ -28,7 +28,7 @@
     }
 
     if ( 'serviceWorker' in navigator) {
-        navigator.serviceWorker.register('/keynectup/serviceworker.php').then(function(registration) {
+        navigator.serviceWorker.register('/keynectup/php/serviceworker.php').then(function(registration) {
 // Registration was successful
             showMsg('ServiceWorker registration successful with scope: ', registration.scope);
             if ( registration.installing ) {
