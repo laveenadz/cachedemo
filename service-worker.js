@@ -1,17 +1,21 @@
 const PRECACHE = 'precache-v1';
 const RUNTIME = 'runtime';
 
+// var baseUrl = '/keynectup';
+var baseUrl = '/cachedemo';
+// var baseUrl = '';
+
 // A list of local resources we always want to be cached.
 const PRECACHE_URLS = [
-  '/keynectup/index.html',
-  '/keynectup/', // Alias for index.html
-  '/keynectup/image.jpg',
-  '/keynectup/favicon.ico',
-  '/keynectup/icon.png',
-  '/keynectup/sample-1.jpg',
-  '/keynectup/sample-2.jpg',
-  '/keynectup/pdf-sample.pdf',
-  '/keynectup/Test_document_PDF.pdf'
+    baseUrl + '/index.html',
+    baseUrl + '/', // Alias for index.html
+    baseUrl + '/image.jpg',
+    baseUrl + '/favicon.ico',
+    baseUrl + '/icon.png',
+    baseUrl + '/sample-1.jpg',
+    baseUrl + '/sample-2.jpg',
+    baseUrl + '/pdf-sample.pdf',
+    baseUrl + '/Test_document_PDF.pdf'
 ];
 
 // The install handler takes care of precaching the resources we always need.
