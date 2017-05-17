@@ -9,7 +9,67 @@
 	"icons": [
 		{
 			"src": "/keynectup/favicon.ico",
-			"sizes": "54x53",
+			"sizes": "16x16",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "32x32",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "57x57",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "60x60",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "72x72",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "76x76",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "96x96",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "114x114",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "120x120",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "144x144",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "150x150",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "180x180",
+			"type": "image/png"
+		},
+		{
+			"src": "/keynectup/favicon.ico",
+			"sizes": "192x192",
 			"type": "image/png"
 		}
 	]
