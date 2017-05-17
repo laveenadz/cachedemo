@@ -14,5 +14,5 @@ echo "NETWORK:\n\n";
 echo "*\n";
 
 echo "FALLBACK:\n";
-echo "/cachedemo/ /cachedemo/index.html\n";
+echo "/cachedemo/ /cachedemo/\n";
 ?>
