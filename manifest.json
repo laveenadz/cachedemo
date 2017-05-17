@@ -1,8 +1,8 @@
 {
-	"name" : "App BabsonChile trip \n- Powered by Decipherzone Software LLP",
+	"name" : "App BabsonChile trip \n- Powered by Decipherzone",
 	"short_name": "BabsonChile",
-	"start_url": "/",
-	"scope": "/",
+	"start_url": "/keynectup",
+	"scope": "/keynectup",
 	"display": "standalone",
 	"theme_color": "#9C2780",
 	"background_color": "#EEE",
