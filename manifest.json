@@ -8,7 +8,7 @@
 	"background_color": "#EEE",
 	"icons": [
 		{
-			"src": "/favicon.ico",
+			"src": "/keynectup/favicon.ico",
 			"sizes": "54x53",
 			"type": "image/png"
 		}
