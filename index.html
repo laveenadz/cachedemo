@@ -27,11 +27,11 @@
         console.log(msg);
     }
 
-    // var baseUrl = '/keynectup';
-    var baseUrl = '/cachedemo';
+     var baseUrl = '/keynectup';
+//    var baseUrl = '/cachedemo';
 //    var baseUrl = '';
 
-    /*if ( 'serviceWorker' in navigator) {
+    if ( 'serviceWorker' in navigator) {
         navigator.serviceWorker.register(baseUrl + '/serviceworker.php').then(function(registration) {
 // Registration was successful
             showMsg('ServiceWorker registration successful with scope: ', registration.scope);
@@ -60,7 +60,7 @@
         });
 
 // Browsers not using Service Workers
-    } else */ if ('applicationCache' in window) {
+    } else  if ('applicationCache' in window) {
         var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         iframe.src = baseUrl + '/load-appcache.html';
