@@ -2,7 +2,7 @@
 <?php
 header('Content-type: application/manifest+json');
 
-echo "{\"name\" : \"App BabsonChile trip Powered by Decipherzone\",\n";
+echo "{\"name\" : \"App BabsonChile trip,\n";
 echo "\"short_name\": \"BabsonChile\",\n";
 echo "\"start_url\": \"/cachedemo\",\n";
 echo "\"scope\": \"/cachedemo\",\n";
