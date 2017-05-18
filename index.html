@@ -7,7 +7,7 @@
     <link rel="shortcut icon" type="image/png" href="/cachedemo/favicon.ico"/>
 </head>
 <body style="background-color: #00A2B1; text-align: center;">
-<button onclick="viewSample(); return false;"
+<button onclick="viewSample(    ); return false;"
         style="padding: 18px 60px; font-size: 16px; border-radius: 8px; box-shadow: none; border: 1px solid #2C2C2C; cursor: pointer;">
     View Sample
 </button>
@@ -27,7 +27,7 @@
     var baseUrl = '/cachedemo';
 //    var baseUrl = '';
 
-    if ( 'serviceWorker' in navigator) {
+    /*if ( 'serviceWorker' in navigator) {
         navigator.serviceWorker.register(baseUrl + '/serviceworker.php').then(function(registration) {
 // Registration was successful
             showMsg('ServiceWorker registration successful with scope: ', registration.scope);
@@ -56,7 +56,7 @@
         });
 
 // Browsers not using Service Workers
-    } else  if ('applicationCache' in window) {
+    } else  */if ('applicationCache' in window) {
         var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
         iframe.src = baseUrl + '/load-appcache.html';
