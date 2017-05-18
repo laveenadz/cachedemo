@@ -20,6 +20,6 @@ echo "{ \"src\": \"/cachedemo/icon.png\",\"sizes\": \"96x96\",\"type\": \"image/
 echo "{ \"src\": \"/cachedemo/icon.png\",\"sizes\": \"114x114\",\"type\": \"image/png\"},\n";
 echo "{ \"src\": \"/cachedemo/icon.png\",\"sizes\": \"150x150\",\"type\": \"image/png\"},\n";
 echo "{ \"src\": \"/cachedemo/icon.png\",\"sizes\": \"180x180\",\"type\": \"image/png\"},\n";
-echo "{ \"src\": \"/cachedemo/icon.png\",\"sizes\": \"192x192\",\"type\": \"image/png\"},\n";
+echo "{ \"src\": \"/cachedemo/icon.png\",\"sizes\": \"192x192\",\"type\": \"image/png\"}\n";
 echo "]}";
 ?>
