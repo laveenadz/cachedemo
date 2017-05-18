@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/png" href="/cachedemo/favicon.ico"/>
-    <link rel="manifest" href="manifest.json">
+    <link rel="manifest" href="/cachedemo/cache.manifest.json.php">
     <title>Keynectup</title>
 </head>
 <body style="background-color: #00A2B1; text-align: center;">
@@ -27,8 +27,8 @@
         console.log(msg);
     }
 
-     var baseUrl = '/keynectup';
-//    var baseUrl = '/cachedemo';
+//     var baseUrl = '/keynectup';
+    var baseUrl = '/cachedemo';
 //    var baseUrl = '';
 
     if ( 'serviceWorker' in navigator) {

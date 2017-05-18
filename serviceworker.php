@@ -2,15 +2,15 @@
 header('Content-type: text/javascript');
 
 $list = array(
-    '/keynectup/index.html',
-      '/keynectup/', // Alias for index.html
-      '/keynectup/image.jpg',
-      '/keynectup/favicon.ico',
-      '/keynectup/icon.png',
-      '/keynectup/sample-1.jpg',
-      '/keynectup/sample-2.jpg',
-      '/keynectup/pdf-sample.pdf',
-      '/keynectup/Test_document_PDF.pdf'
+    '/cachedemo/index.html',
+      '/cachedemo/', // Alias for index.html
+      '/cachedemo/image.jpg',
+      '/cachedemo/favicon.ico',
+      '/cachedemo/icon.png',
+      '/cachedemo/sample-1.jpg',
+      '/cachedemo/sample-2.jpg',
+      '/cachedemo/pdf-sample.pdf',
+      '/cachedemo/Test_document_PDF.pdf'
 );
 ?>
 
