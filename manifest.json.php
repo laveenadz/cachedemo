@@ -1,6 +1,6 @@
 
 <?php
-header('Content-type: text/cache-manifest');
+header('Content-type: application/manifest+json');
 
 echo "{\"name\" : \"App BabsonChile trip Powered by Decipherzone\",\n";
 echo "\"short_name\": \"BabsonChile\",\n";
