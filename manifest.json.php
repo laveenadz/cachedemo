@@ -1,6 +1,6 @@
 
 <?php
-//header('Content-type: application/manifest+json');
+header('Content-type: application/manifest+json');
 
 echo "{\"name\" : \"App BabsonChile trip\",\n";
 echo "\"short_name\": \"BabsonChile\",\n";
