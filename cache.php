@@ -2,6 +2,7 @@
 echo "CACHE MANIFEST\n\n";
 
 echo "/cachedemo/index.html\n";
+echo "/cachedemo/\n";
 echo "/cachedemo/image.jpg\n";
 echo "/cachedemo/favicon.ico\n";
 echo "/cachedemo/icon.png\n";
