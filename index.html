@@ -6,13 +6,53 @@
     <link rel="apple-touch-icon" href="/sunflower.png"/>
     <!--<link rel="manifest" href="manifest.json">-->
     <meta name="apple-mobile-web-app-title" content="BabsonChile">
-    <link rel="apple-touch-startup-image" media="(max-device-width: 480px) and not (-webkit-min-device-pixel-ratio: 2)" href="/sunflower.png">
-    <!-- 640x920 for retina display -->
-    <link rel="apple-touch-startup-image" media="(max-device-width: 480px) and (-webkit-min-device-pixel-ratio: 2)" href="/sunflower.png">
-    <!-- iPad Portrait 768x1004 -->
-    <link rel="apple-touch-startup-image" media="(min-device-width: 768px) and (orientation: portrait)" href="/sunflower.png">
-    <!-- iPad Landscape 1024x748 -->
-    <link rel="apple-touch-startup-image" media="(min-device-width: 768px) and (orientation: landscape)" href="/sunflower.png">
+    <meta name="viewport"
+          content="width=device-width">
+    <meta name="viewport"
+          content="width=320">
+    <!-- Not letterboxed on iPhone 5 -->
+    <meta name="viewport"
+          content="initial-scale=1.0">
+    <meta name="viewport"
+          content="width=320.1">
+    <link href="sunflower.png"
+          media="(device-width: 320px) and (device-height: 480px)
+         and (-webkit-device-pixel-ratio: 1)"
+          rel="apple-touch-startup-image">
+    <!-- iPhone (Retina) -->
+    <link href="sunflower.png"
+          media="(device-width: 320px) and (device-height: 480px)
+         and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+    <!-- iPhone 5 -->
+    <link href="sunflower.png"
+          media="(device-width: 320px) and (device-height: 568px)
+         and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+    <!-- iPad (portrait) -->
+    <link href="sunflower.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+         and (orientation: portrait)
+         and (-webkit-device-pixel-ratio: 1)"
+          rel="apple-touch-startup-image">
+    <!-- iPad (landscape) -->
+    <link href="sunflower.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+         and (orientation: landscape)
+         and (-webkit-device-pixel-ratio: 1)"
+          rel="apple-touch-startup-image">
+    <!-- iPad (Retina, portrait) -->
+    <link href="sunflower.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+         and (orientation: portrait)
+         and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+    <!-- iPad (Retina, landscape) -->
+    <link href="sunflower.png"
+          media="(device-width: 768px) and (device-height: 1024px)
+         and (orientation: landscape)
+         and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
     <title>Keynectup</title>
 </head>
 <body style="background-color: #00A2B1; text-align: center;">
