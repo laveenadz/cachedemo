@@ -78,7 +78,7 @@
     } else */ if ('applicationCache' in window) {
         var iframe = document.createElement('iframe');
         iframe.style.display = 'none';
-        iframe.src = '/load-appcache.html'
+        iframe.src = '/load-appcache.html';
         document.body.appendChild(iframe);
         showMsg("Iframe loaded for AppCache management");
 
