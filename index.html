@@ -4,26 +4,45 @@
     <meta charset="UTF-8">
     <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
     <link rel="apple-touch-icon" href="/seemablossom.png"/>
+
+
+    <meta name="apple-mobile-web-app-capable"
+          content="yes">
     <meta name="apple-mobile-web-app-title" content="BabsonChile">
+    <meta name="apple-mobile-web-app-status-bar-style"
+          content="black">
     <!--<link rel="manifest" href="manifest.json">-->
 
     <!-- Not letterboxed on iPhone 5 -->
     <meta name="viewport" content="initial-scale=1.0">
-    <meta name="viewport" content="width=320.1">
 
+    <link href="https://placehold.it/640x1096"
+          media="(device-width: 320px) and (device-height: 568px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
 
-    <!-- Statusbar style -->
-    <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
+    <!-- iPhone < 5 retina startup image -->
+    <link href="https://placehold.it/640x920"
+          media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
 
-    <!-- Startup images -->
-
-    <!-- iPhone - iPod touch - 320x460 -->
-    <link rel="apple-touch-startup-image" href="seemablossom.png">
+    <!-- iPhone < 5 non-retina startup image -->
+    <link href="https://placehold.it/320x460"
+          media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 1)"
+          rel="apple-touch-startup-image">
+    <!--<link rel="apple-touch-startup-image" href="seemablossom.png">-->
     <!--<link href="seemablossom.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">-->
 
     <title>Keynectup</title>
 </head>
 <body style="background-color: #00A2B1; text-align: center;">
+<style>
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+</style>
 <button onclick="viewSample(); return false;"
         style="padding: 18px 60px; font-size: 16px; border-radius: 8px; box-shadow: none; border: 1px solid #2C2C2C; cursor: pointer;">
     View Sample
