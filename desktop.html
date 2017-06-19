@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/png" href="/favicon.ico"/>
+    <link rel="apple-touch-icon" href="/seemablossom.png"/>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=0">
+
+
+    <meta name="apple-mobile-web-app-title" content="Success">
+    <meta name="apple-mobile-web-app-status-bar-style"
+          content="black">
+    <meta content="initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+
+    <link rel="manifest" href="manifest.json">
+    <!-- Not letterboxed on iPhone 5 -->
+    <!--<meta name="viewport" content="initial-scale=1.0">-->
+
+    <link href="/seemablossom@2x.png"  rel="apple-touch-startup-image" sizes="640x1096">
+
+    <!--&lt;!&ndash; iPhone < 5 retina startup image &ndash;&gt;
+    <link href=""
+          media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 2)"
+          rel="apple-touch-startup-image">
+
+    &lt;!&ndash; iPhone < 5 non-retina startup image &ndash;&gt;
+    <link href=""
+          media="(device-width: 320px) and (device-height: 480px)
+                 and (-webkit-device-pixel-ratio: 1)"
+          rel="apple-touch-startup-image">
+    --><!--<link rel="apple-touch-startup-image" href="seemablossom.png">-->
+    <!--<link href="seemablossom.png" media="(device-width: 320px) and (device-height: 480px) and (-webkit-device-pixel-ratio: 1)" rel="apple-touch-startup-image">-->
+
+    <title>Keynectup</title>
+</head>
+<body style="background-color: yellow; text-align: center;">
+<style>
+    html {
+        -webkit-text-size-adjust: 100%;
+    }
+</style>
+<button onclick="viewSample(); return false;"
+        style="padding: 18px 60px; font-size: 16px; border-radius: 8px; box-shadow: none; border: 1px solid #2C2C2C; cursor: pointer;">
+    View Sample
+</button>
+
+
+<!--<button onclick="viewImage('2'); return false;">View Sample Image 2</button>
+<button onclick="viewImage('3'); return false;">View Sample Image 3</button>
+<button onclick="viewDocument('1'); return false;">Download Doc 1</button>
+<button onclick="viewDocument('2'); return false;">Download Doc 2</button>-->
+
+<figure id="image-container" style="display: none;">
+    <img id="image-1" src="" alt="Sample Image" width="33.33%">
+    <img id="image-2" src="" alt="Sample Image" width="33.33%">
+    <img id="image-3" src="" alt="Sample Image" width="33.33%">
+</figure>
+<!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
+<script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+<script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
+<script type="text/javascript">
+
+    
+        function showMsg(msg){
+//        alert(msg);
+    }
+
+    if ( 'serviceWorker' in navigator) {
+        navigator.serviceWorker.register('/service-worker.js').then(function(registration) {
+// Registration was successful
+            showMsg('ServiceWorker registration successful with scope: ', registration.scope);
+            if ( registration.installing ) {
+                showMsg( 'Service worker installing' );
+            } else if ( registration.waiting ) {
+                showMsg( 'Service worker installed' );
+            } else if ( registration.active ) {
+                showMsg( 'Service worker active' );
+            }
+        }).catch(function(err) {
+            // registration failed :(
+            showMsg('ServiceWorker registration failed: ', err);
+        });
+
+// Listen for claiming our ServiceWorker
+        navigator.serviceWorker.addEventListener('controllerchange',
+            function(event) {
+                // Listen for changes in the state of our ServiceWorker
+                navigator.serviceWorker.controller.addEventListener('statechange', function() {
+                    // If the ServiceWorker becomes "activated", let the user know they can go offline!
+                    if (this.state === 'activated') {
+                        // This example is refreshing the app directly, but you can inform the user with a fancy modal window or similar
+                        window.location.reload( true );
+                    }
+                });
+            });
+
+// Browsers not using Service Workers
+    } else  if ('applicationCache' in window) {
+        var iframe = document.createElement('iframe');
+        iframe.style.display = 'none';
+        iframe.src = '/load-appcache.html';
+        document.body.appendChild(iframe);
+        showMsg("Iframe loaded for AppCache management");
+
+    } else {
+        showMsg("no service worker - no appCache");
+
+    }
+
+    /*document.querySelector('#show').addEventListener('click', () => {
+     const iconUrl = document.querySelector('select').selectedOptions[0].value;
+     let imgElement = document.createElement('img');
+     imgElement.src = iconUrl;
+     document.querySelector('#container').appendChild(imgElement);
+     });*/
+</script>
+
+<script>
+
+    function processRequest(link, type, target) {
+        // IndexedDB
+        var indexedDB = window.indexedDB || window.webkitIndexedDB || window.mozIndexedDB || window.OIndexedDB || window.msIndexedDB,
+            IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.OIDBTransaction || window.msIDBTransaction,
+            dbVersion = 1.0;
+
+        // Create/open database
+        var request = indexedDB.open("elephantFiles", dbVersion),
+            db,
+            createObjectStore = function (dataBase) {
+                // Create an objectStore
+                console.log("Creating objectStore")
+                dataBase.createObjectStore("elephants");
+            },
+
+            getImageFile = function () {
+                // Create XHR
+                var xhr = new XMLHttpRequest(),
+                    blob;
+
+                xhr.open("GET", link, true);
+                // Set the responseType to arraybuffer
+                xhr.responseType = "arraybuffer";
+
+                xhr.addEventListener("load", function () {
+                    if (xhr.status === 200) {
+                        console.log("Image retrieved");
+
+                        // Blob as response
+                        blob = xhr.response;
+                        console.log("Blob:" + blob);
+
+                        // Put the received blob into IndexedDB
+                        putElephantInDb(blob);
+                    }
+                }, false);
+                // Send XHR
+                xhr.send();
+            },
+
+            putElephantInDb = function (blob) {
+                console.log("Putting elephants in IndexedDB");
+
+                // Open a transaction to the database
+                var readWriteMode = typeof IDBTransaction.READ_WRITE == "undefined" ? "readwrite" : IDBTransaction.READ_WRITE;
+                var transaction = db.transaction(["elephants"], readWriteMode);
+
+                // Put the blob into the dabase
+                var put = transaction.objectStore("elephants").put(blob, type);
+
+                // Retrieve the file that was just stored
+                transaction.objectStore("elephants").get(type).onsuccess = function (event) {
+                    var imgFile = event.target.result;
+//                    console.log("Got elephant!" + imgFile);
+
+                    // Get window.URL object
+                    var URL = window.URL || window.webkitURL;
+
+                    if(type == "doc"){
+                        var blob = new Blob([imgFile], {type : 'application/pdf'});
+
+                        /*var pdfUrl = URL.createObjectURL(blob);
+                        window.open(pdfUrl,'_blank');*/
+
+
+                        var reader = new FileReader();
+                        reader.onload = function(e){
+                            var aTag = document.createElement('a');
+                            aTag.setAttribute('href',reader.result);
+                            aTag.setAttribute('target', "_blank");
+                            aTag.click();
+//                            window.open(reader.result);
+                        }
+                        reader.readAsDataURL(blob);
+                    } else {
+
+                        var blob = new Blob([imgFile]);
+                        // Create and revoke ObjectURL
+                        var imgURL = URL.createObjectURL(blob);
+
+                        // Set img src to ObjectURL
+                        var imgElephant = document.getElementById(target);
+                        imgElephant.setAttribute("src", imgURL);
+
+                        // Revoking ObjectURL
+                        imgElephant.onload = function() {
+                            window.URL.revokeObjectURL(this.src);
+                        }
+                    }
+                };
+            };
+
+        request.onerror = function (event) {
+            console.log("Error creating/accessing IndexedDB database");
+        };
+
+        request.onsuccess = function (event) {
+            console.log("Success creating/accessing IndexedDB database");
+            db = request.result;
+
+            db.onerror = function (event) {
+                console.log("Error creating/accessing IndexedDB database");
+            };
+
+            // Interim solution for Google Chrome to create an objectStore. Will be deprecated
+            if (db.setVersion) {
+                if (db.version != dbVersion) {
+                    var setVersion = db.setVersion(dbVersion);
+                    setVersion.onsuccess = function () {
+                        createObjectStore(db);
+                        getImageFile();
+                    };
+                }
+                else {
+                    getImageFile();
+                }
+            }
+            else {
+                getImageFile();
+            }
+        }
+
+        // For future use. Currently only in latest Firefox versions
+        request.onupgradeneeded = function (event) {
+            createObjectStore(event.target.result);
+        };
+    };
+
+    function viewDocument(key){
+        if(key == "1"){
+            processRequest("Test_document_PDF.pdf", "doc");
+        } else if(key == "2"){
+            processRequest("pdf-sample.pdf", "doc");
+        }
+    }
+
+    function viewImage(key, target){
+        document.getElementById("image-container").style.display = 'block';
+        if(key == 1){
+            processRequest("image.jpg", "image", target);
+        } else if(key == 2){
+            processRequest("sample-1.jpg", "image", target);
+        } else if(key == 3){
+            processRequest("sample-2.jpg", "image", target);
+        }
+
+    }
+    function viewSample() {
+        viewImage("1", "image-1");
+        viewImage("2", "image-2");
+        viewImage("3", "image-3");
+
+        /*viewDocument("1");
+        viewDocument("2");*/
+    }
+
+</script>
+
+
+
+</body>
+</html>
