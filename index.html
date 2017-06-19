@@ -61,7 +61,12 @@
 <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
 <script type="text/javascript">
 
-
+window.onload = changeColor();
+function changeColor(){
+    if(window.location == "https://cachedemo.herokuapp.com/#"){
+        document.body.style.backgroundColor = "red";
+    }
+}
         function showMsg(msg){
 //        alert(msg);
     }
