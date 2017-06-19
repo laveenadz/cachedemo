@@ -39,15 +39,15 @@
     html {
         -webkit-text-size-adjust: 100%;
     }
-    @media all and (display-mode: standalone) {
-        body {
-            background-color: yellow;
-        }
-    }
 </style>
 <button onclick="viewSample(); return false;"
         style="padding: 18px 60px; font-size: 16px; border-radius: 8px; box-shadow: none; border: 1px solid #2C2C2C; cursor: pointer;">
     View Sample
+</button>
+
+<button onclick="showMsg(); return false;"
+        style="padding: 18px 60px; font-size: 16px; border-radius: 8px; box-shadow: none; border: 1px solid #2C2C2C; cursor: pointer;">
+    Sample
 </button>
 <!--<button onclick="viewImage('2'); return false;">View Sample Image 2</button>
 <button onclick="viewImage('3'); return false;">View Sample Image 3</button>
@@ -63,12 +63,10 @@
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
 <script type="text/javascript">
-    if (window.matchMedia('(display-mode: standalone)').matches) {
-        alert("jhbfsdlkhkls");
-        console.log("Thank you for installing our app!");
-    }
-    function showMsg(msg){
-//        alert(msg);
+
+
+        function showMsg(){
+alert(window.location);
     }
 
     /*if ( 'serviceWorker' in navigator) {
