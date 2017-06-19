@@ -1,7 +1,7 @@
 {
 	"name" : "App BabsonChile trip",
 	"short_name": "BabsonChile",
-	"start_url": "/desktop",
+	"start_url": "/desktop.html",
 	"scope": "/",
 	"display": "standalone",
 	"theme_color": "#9C2780",
