@@ -63,7 +63,7 @@
 
 window.onload = changeColor();
 function changeColor(){
-    if(window.location == "https://cachedemo.herokuapp.com/#"){
+    if(!navigator.onLine && window.location.hash == "#"){
         document.body.style.backgroundColor = "red";
     }
 }
