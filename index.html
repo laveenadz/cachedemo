@@ -46,6 +46,7 @@
 
 window.onload = changeColor();
 function changeColor(){
+    console.log(window.location);
     if(!navigator.onLine && window.location.hash == ""){
         document.body.style.backgroundColor = "red";
     }
