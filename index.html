@@ -34,6 +34,7 @@
     <img id="image-2" src="" alt="Sample Image" width="33.33%">
     <img id="image-3" src="" alt="Sample Image" width="33.33%">
 </figure>
+<button id="helpbutton" style="padding: 18px 60px; font-size: 16px; border-radius: 8px; box-shadow: none; border: 1px solid #2C2C2C; cursor: pointer;display: none">Help</button>
 <!--<link rel="stylesheet" href="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css" />
 <script type="text/javascript" src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
 <script type="text/javascript" src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>-->
@@ -41,6 +42,7 @@
     window.addEventListener('beforeinstallprompt', function(e) {
         console.log('beforeinstallprompt Event fired');
         e.preventDefault();
+        document.getElementById('helpbutton').style.display="block";
         return false;
     });
 
