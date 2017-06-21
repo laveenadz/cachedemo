@@ -46,14 +46,14 @@
         return false;
     });
     window.onappinstalled = function(ev) {
-        document.getElementById('helpbutton').style.display="block";
+
         console.log('The application was installed.');
     };
 
 window.onload = changeColor();
 function changeColor(){
-    console.log(window.location);
     if(!navigator.onLine && window.location.hash == ""){
+        document.getElementById('helpbutton').style.display="none";
         document.body.style.backgroundColor = "red";
     }
 }
@@ -66,6 +66,7 @@ function changeColor(){
 // Registration was successful
             showMsg('ServiceWorker registration successful with scope: ', registration.scope);
             if ( registration.installing ) {
+                document.getElementById('helpbutton').style.display="block";
                 showMsg( 'Service worker installing' );
             } else if ( registration.waiting ) {
                 showMsg( 'Service worker installed' );
