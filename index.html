@@ -42,9 +42,13 @@
     window.addEventListener('beforeinstallprompt', function(e) {
         console.log('beforeinstallprompt Event fired');
         e.preventDefault();
-        document.getElementById('helpbutton').style.display="block";
+
         return false;
     });
+    window.onappinstalled = function(ev) {
+        document.getElementById('helpbutton').style.display="block";
+        console.log('The application was installed.');
+    };
 
 window.onload = changeColor();
 function changeColor(){
