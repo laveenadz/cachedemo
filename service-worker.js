@@ -5,6 +5,7 @@ const RUNTIME = 'runtime';
 const PRECACHE_URLS = [
   '/index.html',
   '/', // Alias for index.html
+    '/gmailimage.jpg',
   '/image.jpg',
   '/sample-1.jpg',
   '/sample-2.jpg',
